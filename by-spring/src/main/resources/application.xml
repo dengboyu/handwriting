@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans>
+
+	<!-- class的作用Class.forName反射加载类	-->
+	<bean id="student" class="org.spring.by.bean.Student">
+		<property name="age" value="12"></property>
+		<property name="address"value="天津小白楼"></property>
+	</bean>
+
+	<bean id="studentService" class="org.spring.by.bean.StudentService">
+		<property ref="student"></property>
+	</bean>
+
+</beans>
