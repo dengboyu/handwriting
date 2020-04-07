@@ -1,12 +1,20 @@
 package com.by;
 
 
+import com.by.log.Logger;
+import com.by.log.LoggerFactory;
 
 public class AppStart {
 
+    private static final Logger logger = LoggerFactory.getLogger(AppStart.class.getName());
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        logger.debug("试试");
+
+
+
+
     }
 
 
