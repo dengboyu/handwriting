@@ -14,7 +14,7 @@ public class LoggerFactory {
 
 
     public static Logger getLogger(String name){
-        return new DefaultLoggerFactory().getLogger(name);
+        return DefaultLoggerFactory.getInstance().getLogger(name);
     }
 
 }

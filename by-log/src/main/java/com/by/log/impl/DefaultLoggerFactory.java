@@ -12,8 +12,24 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class DefaultLoggerFactory implements ILoggerFactory {
 
+    private DefaultLoggerFactory() {
+    }
 
+    private static DefaultLoggerFactory singleton = null;
     private static volatile ConcurrentHashMap<String, Logger> loggerFactory = new ConcurrentHashMap();
+
+    public static DefaultLoggerFactory getInstance(){
+
+        if(singleton==null){
+            synchronized (DefaultLoggerFactory.class){
+                if (singleton==null) {
+                    singleton = new DefaultLoggerFactory();
+                }
+            }
+        }
+        return singleton;
+    }
+
 
     public Logger getLogger(String name) {
 
@@ -23,7 +39,6 @@ public class DefaultLoggerFactory implements ILoggerFactory {
             synchronized (DefaultLoggerFactory.class) {
 
                 logger = loggerFactory.get(name);
-
                 if (logger == null) {
 
                     logger = new DefaultLogger(name);
