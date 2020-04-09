@@ -1,11 +1,8 @@
 package com.by;
 
 
-import org.apache.log4j.helpers.LogLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Properties;
 
 public class AppStart {
 
@@ -13,7 +10,7 @@ public class AppStart {
 //    private static final Logger logger = Logger.getLogger(AppStart.class.getName());
 
     static {
-        LogLog.setInternalDebugging(true);
+//        LogLog.setInternalDebugging(true);
         logger = LoggerFactory.getLogger(AppStart.class);
     }
 
