@@ -15,4 +15,6 @@ public interface LoggingEvent {
 
     String getMessage();
 
+    String getLevel();
+
 }
